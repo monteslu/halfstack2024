@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>HalfStack 2024</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/blood.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,8 +16,195 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h2 >HalfStack</h2>
+					<h2 >2024</h2>
+				</section>
+
+				<section>
+					<h3>Luis Montes</h3>
+					<h4>
+						<div>
+							<a href="https://fosstodon.org/@monteslu" target="_blank"><img src="images/mastodon.svg" style="border: 0; background: 0; box-shadow: 0 0 0;"></a>
+						</div>
+						<div>
+							@monteslu@Fosstodon.org 
+						</div>
+					</h4>
+					<h4>
+						<a href="https://twitter.com/monteslu" target="_blank"><img src="images/t-icon.svg" style="border: 0; background: 0; box-shadow: 0 0 0;"></a>
+						@monteslu <a href="https://github.com/monteslu" target="_blank"><img src="images/gh-icon.svg" style="border: 0; background: 0; box-shadow: 0 0 0;"></a>
+					</h4>
+				</section>
+
+				<section>
+					<h4>"Get a bunch of bikes and ride them around with your friends. &nbsp; It's the sh*t."</h4>
+					<h4>-Tyler The Creator</h4>
+					<img src="images/tyler.jpg" style="border: 0; background: 0; box-shadow: 0 0 0; width: 50%;">
+				</section>
+
+				<section>
+					<h4>BikeMesa - August 2021</h4>
+					<img src="images/bikemesa1.jpg" style="border: 0; background: 0; box-shadow: 0 0 0;">
+				</section>
+
+				<section>
+					<h4>Used Cargo bike!</h4>
+					<img src="images/djbike0.jpg" style="border: 0; background: 0; box-shadow: 0 0 0; width: 75%;">
+				</section>
+
+				<section>
+					<h4>thanks, Sheldon!</h4>
+					<img src="images/djbike1.jpg" style="border: 0; background: 0; box-shadow: 0 0 0; width: 75%;">
+				</section>
+
+				<section>
+					<h4>"Build a DJ Bike and ride it around with your friends. &nbsp; It's the sh*t." -me</h4>
+					<img src="images/djbike2.jpg" style="border: 0; background: 0; box-shadow: 0 0 0; width: 75%;">
+				</section>
+
+				<section>
+					<h4>Mixxx</h4>
+					<img src="images/mixxx.png" style="border: 0; background: 0; box-shadow: 0 0 0; width: 75%;">
+				</section>
+
+				<section>
+					<img src="images/djjohn.gif" style="border: 0; background: 0; box-shadow: 0 0 0;">
+				</section>
+
+				<section>
+					<h2><a href="https://webamp.org" target="_blank">winamp</a></h2>
+					<h3>Party like it's 1997!</h3>
+				</section>
+
+				<section>
+					<h3>Canvas</h3>
+					<pre><code data-trim data-noescape>
+function paint() {
+	const context = canvas.getContext('2d');
+
+	context.fillStyle = 'rgb(200, 0, 0)';
+	context.fillRect(10, 10, 50, 50);
+	context.drawImage(coolPic, 30, 30, 200, 100);
+
+	requestAnimationFrame(paint);
+}
+
+requestAnimationFrame(paint);
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>WebGL</h3>
+					<pre><code data-trim data-noescape>
+const gl = canvas.getContext("webgl");
+
+// setup OpenGL Shader Language (GLSL) program:
+// vertex shader & fragment shader
+
+// add some boilerplate code load and program it into the GPU
+...
+					</code></pre>
+					<a href="https://webglfundamentals.org/webgl/lessons/webgl-shadertoy.html" target="_blank">boilerplate code</a>
+				</section>
+
+				<section>
+					<h3>GLSL</h3>
+					<ul>
+						<li>C-like syntax</li>
+						<li>built in functions (sin, cos, etc)</li>
+						<li>typed: (vec2, vec3, vec4, etc.)</li>
+						<li>swizeling</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Vertex Shader</h3>
+					<pre><code data-trim data-noescape>
+// passed in from the javascript
+attribute vec4 a_position;
+
+void main() {
+	// gl_Position is a special variable to return
+	gl_Position = a_position;
+}
+					</code></pre>
+					<img src="images/triangles.jpg" style="border: 0; background: 0; box-shadow: 0 0 0;">
+				</section>
+
+				<section>
+					<h3>Fragment(pixel) Shader</h3>
+					<pre><code data-trim data-noescape>
+void main() {
+	// gl_FragCoord is the x & y coordinates in canvas space
+	// gl_FragColor returns this pixels RGBA value
+
+	gl_FragColor = vec4(gl_FragCoord.x / 640.0, 0.0, 0.0, 1.0);
+}
+					</code></pre>
+					<img src="images/firstshader.png" style="border: 0; background: 0; box-shadow: 0 0 0;">
+				</section>
+
+				<section>
+					<h3>Uniforms</h3>
+					<ul>
+						<li>time</li>
+						<li>mouse</li>
+						<li>resolution</li>
+						<li>audio</li>
+						<li>textures</li>
+						<li>anything from your browser!</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><a href="https://www.shadertoy.com/" target="_blank">ShaderToy</a></h2>
+					
+
+					<h3><a href="https://www.youtube.com/@kishimisu" target="_blank">kishimisu's tutorials</a></h3>
+				</section>
+
+				<section>
+					<h2><a href="https://github.com/redaphid/paper-cranes" target="_blank">paper-cranes</a></h2>
+
+					<h3><a href="https://visuals.beadfamous.com/?shader=stars" target="_blank">live demo</a></h3>
+				</section>
+
+				<section>
+					<h2>WebGPU - May 2023</h2>
+					<ul>
+						<li>Abstraction later (Vulkan, Metal, and DirectX 12 )</li>
+						<li>Not Just for Browsers</li>
+						<li>WGSL</li>
+					</ul>
+				</section>
+				<section>
+					<h2>WebGPU programming</h2>
+					<ul>
+						<li>Vertex Shaders</li>
+						<li>Fragment Shaders</li>
+						<li>Compute Shaders ?!?!?</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Stems</h2>
+					<img src="images/demucs-gui.png" style="border: 0; background: 0; box-shadow: 0 0 0; width: 50%;">
+				</section>
+				<section>
+					<h4>remove vocals!  singing-to-text!</h4>
+					<img src="images/sunfly.png" style="border: 0; background: 0; box-shadow: 0 0 0; width: 50%;">
+					<h4>compare your vocals to the original!</h4>
+				</section>
+				<section>
+					<h1>Thank You!</h1>
+					
+					<h3>Luis Montes</h3>
+					<h4>
+						<div>
+							@monteslu@Fosstodon.org 
+						</div>
+					</h4>
+				</section>
 			</div>
 		</div>
 
